@@ -1,0 +1,141 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vertical Ticker</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+<script src="jquery.easy-ticker.js"></script>
+<style>
+.wrapper {
+	width: 600px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: "myriad Pro";
+	}
+.ticker {
+	border: 2px solid #2BC64E;
+	border-radius: 10px;
+	width: 500px;
+	float: left;
+	}
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-style: italic;
+	}
+ul li {
+	list-style: none;
+	height:165px;
+	width: 600px;
+	padding:7px;
+	background-color: #F5F3E5;
+	border-bottom: 1px solid #D6CFB8;
+	}	
+li img {
+	float: left;
+	margin-right:12px;
+	}
+.pic {
+	width: 150px;
+	height: 150px;
+	background-color: #F5F3E5;
+	}
+ul a {
+	text-decoration: none;
+	color:#333;
+	}
+li:hover {
+	opacity: 0.7;
+	border: #999 solid 1px;
+	}
+.controls {
+	margin-top: 210px;
+	}
+a img {
+	width: 50px;
+	height: 50px;
+	margin: 3px;
+	}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+    <h2>Sites</h2>
+    <div class="ticker">
+<ul>
+	<li><a href="http://www.facebook.com" target="_blank"><div>
+    <img class="pic" src="http://icons.iconarchive.com/icons/hopstarter/rounded-square/128/Social-Network-Facebook-icon.png"><h3>Facebook</h3>
+    <br>Linking Root Domains: 9,616,487
+    <br>External Links: 1,688,316,928
+    </div></a></li>
+	<li><a href="http://www.twitter.com" target="_blank"><div>
+    <img class="pic" src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/128/social-twitter-box-blue-icon.png"><h3>Twitter</h3>
+    <br>Linking Root Domains: 6,454,936
+    <br>External Links: 2,147,483,647
+    </div></a></li>
+    <li><a href="http://www.google.com" target="_blank"><div>
+    <img class="pic" src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/128/social-google-box-icon.png"><h3>Google</h3>
+    <br>Linking Root Domains: 5,868,081
+    <br>External Links: 807,173,458
+    </div></a></li>
+	<li><a href="http://www.youtube.com" target="_blank"><div>
+    <img class="pic" src="http://icons.iconarchive.com/icons/wwalczyszyn/android-style-honeycomb/128/YouTube-icon.png"><h3>YouTube</h3>
+    <br>Linking Root Domains: 5,442,206
+    <br>External Links: 841,281,214
+    </div></a></li>
+	<li><a href="http://www.wordpress.org" target="_blank"><div>
+    <img class="pic" src="http://icons.iconarchive.com/icons/graphics-vibe/simple-rounded-social/128/wordpress-icon.png"><h3>Wordpress</h3>
+    <br>Linking Root Domains: 4,051,288
+    <br>External Links: 361,023,992
+    </div></a></li>
+	<li><a href="http://www.adobe.com" target="_blank"><div>
+    <img class="pic" src="http://icons.iconarchive.com/icons/benjigarner/softdimension/128/Adobe-icon.png"><h3>Adobe</h3>
+    <br>Linking Root Domains: 3,498,190
+    <br>External Links: 232,289,315
+    </div></a></li>
+	<li><a href="http://www.wikipedia.com" target="_blank"><div>
+    <img class="pic" src="http://icons.iconarchive.com/icons/stalker018/mmii-flat-vol-3/128/wikipedia-icon.png"><h3>Wikipedia</h3>
+    <br>Linking Root Domains: 2,917,053
+    <br>External Links: 206,217,734
+    </div></a></li>
+
+    </ul>
+</div>
+			<div class="controls">
+			  <a href="#" class="btnUp">
+              <img src="http://icons.iconarchive.com/icons/icojam/blue-bits/128/arrow-up-icon.png"></a>
+			  <a id="change" href="#" class="btnToggle" >
+              <img onClick="changeToPlay()" src="http://icons.iconarchive.com/icons/visualpharm/must-have/128/Pause-icon.png"></a>
+              <a href="#" class="btnDown">
+              <img src="http://icons.iconarchive.com/icons/icojam/blue-bits/128/arrow-down-icon.png"></a>
+			  </div>
+</div>
+ 
+<script>
+$(function(){
+	
+	$('.ticker').easyTicker({
+		direction: 'up',
+		visible: 3,
+		interval: 2000,
+		controls: {
+			up: '.btnUp',
+			down: '.btnDown',
+			toggle: '.btnToggle'
+		}
+	});
+});
+
+function changeToPlay() {
+	document.getElementById("change").innerHTML='<img onClick="changeToPause()"src="http://icons.iconarchive.com/icons/visualpharm/must-have/128/Play-icon.png">';
+	}
+	
+function changeToPause() {
+	document.getElementById("change").innerHTML='<img onClick="changeToPlay()" src="http://icons.iconarchive.com/icons/visualpharm/must-have/128/Pause-icon.png">';
+	}
+</script>
+
+</body>
+</html>
